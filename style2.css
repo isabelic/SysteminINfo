@@ -55,3 +55,18 @@ main {
 main h1 {
   color: #66fcf1;
 }
+
+.botao-voltar {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao-voltar:hover {
+  background-color: #005599;
+}
