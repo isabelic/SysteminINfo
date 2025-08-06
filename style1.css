@@ -1,54 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+/* RESET */
 * {
   box-sizing: border-box;
-}
-
-body, html {
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
   font-family: 'Inter', sans-serif;
-  height: 100%;
-  background: linear-gradient(180deg, #0b0c10 0%, #1a1b1f 100%);
-  color: #c5c6c7;
+  background: linear-gradient(180deg, #0e1a2b 0%, #16273d 100%);
+  color: #d6ecff;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* LOGO girando cobrindo o fundo todo */
-#background-logo {
+/* ========== FUNDO COM LOGOS GIRANDO ========== */
+.floating-logos {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  opacity: 0.05;
-  z-index: 0;
-  animation: spin 90s linear infinite;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-#background-logo img {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
+.floating-logo {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.07;
+  animation:
+    spinLogo 20s linear infinite,
+    floatLogo calc(40s + var(--i) * 3s) ease-in-out infinite;
 }
 
-/* Conteúdo principal */
+@keyframes spinLogo {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floatLogo {
+  0% {
+    top: calc(var(--i) * 10%);
+    left: calc(var(--i) * 10%);
+    transform: translate(0, 0);
+  }
+  25% {
+    top: calc(100% - var(--i) * 7%);
+    left: calc(100% - var(--i) * 9%);
+    transform: translate(10px, 10px);
+  }
+  50% {
+    top: calc(var(--i) * 5%);
+    left: calc(100% - var(--i) * 5%);
+    transform: translate(-10px, 10px);
+  }
+  75% {
+    top: calc(100% - var(--i) * 10%);
+    left: calc(var(--i) * 6%);
+    transform: translate(10px, -10px);
+  }
+  100% {
+    top: calc(var(--i) * 10%);
+    left: calc(var(--i) * 10%);
+    transform: translate(0, 0);
+  }
+}
+
+/* ========== CONTEÚDO PRINCIPAL ========== */
+.conteudo-principal {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+/* Hero Section */
 #hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
   padding: 0 20px;
   z-index: 1;
 }
@@ -56,25 +93,24 @@ body, html {
 #hero h1 {
   font-size: 4rem;
   font-weight: 800;
-  color: #66fcf1;
-  text-shadow: 0 0 10px #66fcf180;
-  margin: 0;
+  color: #00BFFF;
+  text-shadow: 0 0 10px #00BFFF80;
 }
 
 #hero p {
   margin-top: 15px;
   font-size: 1.25rem;
-  color: #a8fdf7;
+  color: #a8dfff;
   max-width: 600px;
 }
 
-/* seta para baixo animada */
+/* Seta animada */
 .scroll-down {
   position: absolute;
   bottom: 40px;
   width: 30px;
   height: 40px;
-  border: 2px solid #66fcf1;
+  border: 2px solid #00BFFF;
   border-radius: 25px;
   opacity: 0.75;
   animation: bounce 2s infinite;
@@ -88,7 +124,7 @@ body, html {
   left: 50%;
   width: 6px;
   height: 6px;
-  background: #66fcf1;
+  background: #00BFFF;
   border-radius: 50%;
   transform: translateX(-50%);
   animation: scroll-dot 2s infinite;
@@ -96,40 +132,41 @@ body, html {
 
 @keyframes bounce {
   0%, 100% { opacity: 0.75; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(10px); }
+  50%      { opacity: 1; transform: translateY(10px); }
 }
 
 @keyframes scroll-dot {
-  0% { top: 10px; opacity: 1; }
-  50% { top: 20px; opacity: 0; }
+  0%   { top: 10px; opacity: 1; }
+  50%  { top: 20px; opacity: 0; }
   100% { top: 10px; opacity: 1; }
 }
 
-/* CARD DOCUMENTAÇÃO */
+/* ========== CARD DOCUMENTAÇÃO ========== */
 #doc-card {
-  background: #1f2833;
+  background: #1e2e45;
   margin: 50px auto 80px;
   max-width: 400px;
   border-radius: 12px;
   padding: 30px 25px;
-  box-shadow: 0 8px 24px #66fcf180;
+  box-shadow: 0 8px 24px #00BFFF80;
   text-align: center;
+  position: relative;
   z-index: 1;
 }
 
 #doc-card h2 {
-  color: #66fcf1;
+  color: #00BFFF;
   margin-bottom: 15px;
 }
 
 #doc-card p {
-  color: #c5c6c7;
+  color: #d6ecff;
   margin-bottom: 25px;
 }
 
 #doc-card button {
-  background-color: #66fcf1;
-  color: #0b0c10;
+  background-color: #00BFFF;
+  color: #0e1a2b;
   font-weight: 600;
   border: none;
   padding: 12px 25px;
@@ -137,8 +174,274 @@ body, html {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
 }
 
 #doc-card button:hover {
-  background-color: #45a29e;
+  background-color: #0095dd;
+}
+
+/* Botão voltar */
+.botao-voltar {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  background-color: #005fa3;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao-voltar:hover {
+  background-color: #0077cc;
+}
+
+/* ========== FLASH EXPLOSÃO ========== */
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2000;
+  animation: flash-animation 0.6s ease-out;
+}
+
+@keyframes flash-animation {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  60%  { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+.site-footer {
+  background-color: #0e1a2b;
+  color: #a0cfff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.95rem;
+  margin-top: 40px;
+  z-index: 1;
+  position: relative;
+  border-top: 1px solid #1e3a5a;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
+/* ========== SEÇÃO DESENVOLVEDORES ========== */
+#developers {
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.dev-title {
+  font-size: 2.5rem;
+  color: #00BFFF;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #0d1421;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #00BFFF90;
+  padding: 40px 40px 60px;
+}
+
+/* Carousel Track */
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each Slide */
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #c8a9f9;
+  text-align: center;
+}
+
+/* Developer Photo */
+.developer-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00BFFF80;
+  border: 3px solid #00BFFF;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Make sure the img inside fits */
+.developer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Developer Name */
+.carousel-slide h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #00BFFF;
+}
+
+/* Developer Description */
+.carousel-slide p {
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #c8a9f9;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #00BFFF;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+  z-index: 3;
+}
+
+.carousel-btn:hover {
+  color: #0095dd;
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+/* Carousel Navigation Dots */
+.carousel-nav {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.carousel-nav button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #00BFFF;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-nav button.current-slide,
+.carousel-nav button:hover {
+  background-color: #00BFFF;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1024px) {
+  #hero h1 {
+    font-size: 3rem;
+  }
+
+  #hero p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  #doc-card {
+    margin: 40px 20px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    min-height: auto;
+    padding: 80px 20px 40px;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+
+  #doc-card {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  #doc-card button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .botao-voltar {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 0.95rem;
+  }
+
+  #doc-card {
+    padding: 18px;
+  }
+
+  #doc-card button {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
 }

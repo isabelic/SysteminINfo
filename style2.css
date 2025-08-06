@@ -1,72 +1,197 @@
-body {
+/* Reset básico */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0b0c10;
-  color: #c5c6c7;
-  display: flex;
-  height: 100vh;
+  padding: 0;
 }
 
-aside {
-  width: 280px;
-  background-color: #1f2833;
+/* Layout base com footer no final */
+body, html {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #0e1a2b;
+  color: #d6ecff;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Envolve tudo menos o footer */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Menu lateral */
+aside#sidebar {
+  width: 250px;
+  background-color: #16273d;
   padding: 20px;
   overflow-y: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 999;
 }
 
-aside h2 {
-  color: #66fcf1;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+aside#sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.folder {
-  margin-bottom: 15px;
+aside#sidebar .logo img {
+  width: 36px;
+  height: 36px;
 }
 
-.folder > summary {
-  cursor: pointer;
-  font-weight: bold;
-  color: #66fcf1;
-  padding: 5px 0;
+aside#sidebar .logo h1 {
+  font-size: 18px;
+  color: #00BFFF;
 }
 
-details {
-  margin-left: 10px;
+/* Conteúdo principal */
+main#conteudo {
+  flex: 1;
+  padding: 30px;
+  overflow: auto;
 }
 
-.sub-item {
-  padding-left: 20px;
-  color: #c5c6c7;
-  cursor: pointer;
-  margin: 4px 0;
-}
-
-.sub-item:hover {
-  text-decoration: underline;
-}
-
-main {
-  flex-grow: 1;
-  padding: 40px;
-  overflow-y: auto;
-}
-
-main h1 {
-  color: #66fcf1;
-}
-
+/* Botão de voltar */
 .botao-voltar {
   display: inline-block;
   padding: 10px 15px;
-  background-color: #003366;
+  background-color: #005fa3;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  margin-left: 20px;
 }
 
 .botao-voltar:hover {
-  background-color: #005599;
+  background-color: #0077cc;
+}
+
+/* Menu hamburguer */
+#menu-toggle {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #00BFFF;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Folders e sub-itens */
+.folder summary {
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  color: #00BFFF;
+}
+
+.sub-item {
+  margin-left: 15px;
+  margin-top: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.sub-item:hover {
+  background-color: #00BFFF22;
+}
+
+/* Conteúdo da documentação */
+main#conteudo h1 {
+  color: #00BFFF;
+  margin-bottom: 20px;
+}
+
+main#conteudo ol,
+main#conteudo ul {
+  margin-top: 10px;
+  margin-left: 25px;
+  line-height: 1.8;
+  color: #bcdfff;
+}
+
+main#conteudo li {
+  margin-bottom: 10px;
+}
+
+main#conteudo strong {
+  color: #00BFFF;
+  font-weight: bold;
+}
+
+.img-container {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.img-container img {
+  max-width: 100%;
+  border: 1px solid #00BFFF33;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #00bfff33;
+}
+
+/* Rodapé */
+.site-footer {
+  background-color: #0e1a2b;
+  color: #a0cfff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.95rem;
+  border-top: 1px solid #1e3a5a;
+  z-index: 1;
+  position: relative;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  aside#sidebar {
+    display: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  aside#sidebar.active {
+    display: block;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  main#conteudo {
+    padding: 20px;
+  }
+
+  .botao-voltar {
+    margin: 10px;
+  }
 }
