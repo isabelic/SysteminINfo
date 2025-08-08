@@ -16,42 +16,96 @@ body, html {
   flex-direction: column;
 }
 
-/* Envolve tudo menos o footer */
+
 .page-wrapper {
   flex: 1;
   display: flex;
   flex-direction: row;
 }
+/* Importar nova fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* Menu lateral */
 aside#sidebar {
-  width: 250px;
-  background-color: #16273d;
-  padding: 20px;
-  overflow-y: auto;
+  width: 260px;
+  background-color: #16273d; /* sua cor base */
+  padding: 24px;
   height: 100vh;
+  overflow-y: auto;
   position: sticky;
   top: 0;
   transition: transform 0.3s ease;
   z-index: 999;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
+/* Logo e título */
 aside#sidebar .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 aside#sidebar .logo img {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
 }
 
 aside#sidebar .logo h1 {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
   color: #00BFFF;
 }
+
+/* Links principais */
+aside#sidebar a {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+aside#sidebar a:hover {
+  color: #A486FF; /* cor de destaque no hover */
+}
+
+/* Cabeçalhos de grupo */
+aside#sidebar h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+/* Accordion */
+aside#sidebar details {
+  margin: 8px 0;
+}
+
+aside#sidebar summary {
+  list-style: none;
+  cursor: pointer;
+  color: #A8DFFF;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside#sidebar summary::-webkit-details-marker {
+  display: none;
+}
+
 
 /* Conteúdo principal */
 main#conteudo {

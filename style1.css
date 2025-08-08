@@ -3,8 +3,9 @@
 /* RESET */
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0;  
   padding: 0;
+  font-family: 'Inter', sans-serif; 
 }
 
 html, body {
@@ -19,23 +20,20 @@ html, body {
 /* ========== FUNDO COM LOGOS GIRANDO ========== */
 .floating-logos {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  width: 85vw;    
+  height: 85vh;    
+  transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
 }
 
 .floating-logo {
-  position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  animation: spinLogo 20s linear infinite;
   opacity: 0.07;
-  animation:
-    spinLogo 20s linear infinite,
-    floatLogo calc(40s + var(--i) * 3s) ease-in-out infinite;
 }
 
 @keyframes spinLogo {
@@ -43,33 +41,6 @@ html, body {
   100% { transform: rotate(360deg); }
 }
 
-@keyframes floatLogo {
-  0% {
-    top: calc(var(--i) * 10%);
-    left: calc(var(--i) * 10%);
-    transform: translate(0, 0);
-  }
-  25% {
-    top: calc(100% - var(--i) * 7%);
-    left: calc(100% - var(--i) * 9%);
-    transform: translate(10px, 10px);
-  }
-  50% {
-    top: calc(var(--i) * 5%);
-    left: calc(100% - var(--i) * 5%);
-    transform: translate(-10px, 10px);
-  }
-  75% {
-    top: calc(100% - var(--i) * 10%);
-    left: calc(var(--i) * 6%);
-    transform: translate(10px, -10px);
-  }
-  100% {
-    top: calc(var(--i) * 10%);
-    left: calc(var(--i) * 10%);
-    transform: translate(0, 0);
-  }
-}
 
 /* ========== CONTEÚDO PRINCIPAL ========== */
 .conteudo-principal {
@@ -238,210 +209,81 @@ html, body {
 }
 
 /* ========== SEÇÃO DESENVOLVEDORES ========== */
-#developers {
-  max-width: 900px;
-  margin: 60px auto 80px;
-  padding: 0 20px;
-  text-align: center;
-  z-index: 1;
-  position: relative;
+.developers-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* diminui o espaço entre cards */
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
-.dev-title {
-  font-size: 2.5rem;
-  color: #00BFFF;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-/* Carousel Container */
-.carousel-container {
-  position: relative;
-  overflow: hidden;
+/* Card base */
+.developer-card {
   background-color: #0d1421;
   border-radius: 12px;
-  box-shadow: 0 0 30px #00BFFF90;
-  padding: 40px 40px 60px;
-}
-
-/* Carousel Track */
-.carousel-track-container {
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Each Slide */
-.carousel-slide {
-  min-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  box-shadow: 0 0 20px #00BFFF90;
+  padding: 20px;
   color: #c8a9f9;
+  flex: 1 1 240px; 
+  max-width: 260px; 
   text-align: center;
-}
-
-/* Developer Photo */
-.developer-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 20px #00BFFF80;
-  border: 3px solid #00BFFF;
-  margin: 0 auto 20px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Make sure the img inside fits */
-.developer-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* Developer Name */
-.carousel-slide h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #00BFFF;
-}
-
-/* Developer Description */
-.carousel-slide p {
-  font-size: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-  color: #c8a9f9;
-}
-
-/* Carousel Buttons */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #00BFFF;
-  font-size: 2rem;
-  cursor: pointer;
-  user-select: none;
-  padding: 10px 15px;
-  transition: color 0.3s ease;
-  z-index: 3;
-}
-
-.carousel-btn:hover {
-  color: #0095dd;
-}
-
-.carousel-btn.prev {
-  left: 15px;
-}
-
-.carousel-btn.next {
-  right: 15px;
-}
-
-/* Carousel Navigation Dots */
-.carousel-nav {
-  margin-top: 25px;
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
 }
 
-.carousel-nav button {
-  width: 14px;
-  height: 14px;
+.developer-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.developer-photo {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 2px solid #00BFFF;
-  background-color: transparent;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #00BFFF;
+  box-shadow: 0 0 15px #00BFFF80;
+}
+#developers h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00BFFF;
+  margin-bottom: 20px;
 }
 
-.carousel-nav button.current-slide,
-.carousel-nav button:hover {
-  background-color: #00BFFF;
+.developer-card h3 {
+  font-size: 1.4rem;
+  color: #00BFFF;
+  margin-bottom: 10px;
 }
 
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 1024px) {
-  #hero h1 {
-    font-size: 3rem;
-  }
 
-  #hero p {
-    font-size: 1.1rem;
-    padding: 0 10px;
-  }
-
-  #doc-card {
-    margin: 40px 20px;
-    max-width: 90%;
-  }
+.developer-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-@media (max-width: 768px) {
-  #hero {
-    min-height: auto;
-    padding: 80px 20px 40px;
-  }
-
-  #hero h1 {
-    font-size: 2.5rem;
-  }
-
-  #hero p {
-    font-size: 1rem;
-  }
-
-  .scroll-down {
-    display: none;
-  }
-
-  #doc-card {
-    padding: 20px;
-    margin: 30px auto;
-  }
-
-  #doc-card button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .botao-voltar {
-    display: block;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero h1 {
-    font-size: 2rem;
-  }
-
-  #hero p {
-    font-size: 0.95rem;
-  }
-
-  #doc-card {
+/* ===== Responsividade ===== */
+@media (max-width: 1024px) { 
+  .developer-card {
+    flex: 1 1 220px;
+    max-width: 230px;
     padding: 18px;
   }
+}
 
-  #doc-card button {
-    padding: 8px 18px;
-    font-size: 0.85rem;
+@media (max-width: 768px) { 
+  .developer-card {
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) { 
+  .developer-card {
+    max-width: 90%;
   }
 }

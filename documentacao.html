@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Documentação | SystemIN</title>
   <link rel="stylesheet" href="style2.css">
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,30 +16,34 @@
 
     <!-- Menu lateral -->
     <aside id="sidebar">
+      <!-- Logo e título -->
       <div class="logo">
         <img src="logo.png" alt="Logo AulaSys">
         <h1>SystemIN Docs</h1>
       </div>
 
+      <!-- Navegação -->
       <nav>
-        <details open class="folder">
-          <summary class="negrito">ADMINISTRADOR</summary>
+        <a href="/docs/github">Github</a>
+
+        <details class="folder">
+          <summary>ADMINISTRADOR <span class="arrow">›</span></summary>
 
           <details class="folder">
-            <summary>Config</summary>
+            <summary>Config <span class="arrow">›</span></summary>
             <div class="sub-item" data-id="navbar">NavBar</div>
             <div class="sub-item" data-id="forms">Funcionalidades do Forms</div>
           </details>
 
           <details class="folder">
-            <summary>Turma</summary>
+            <summary>Turma <span class="arrow">›</span></summary>
             <div class="sub-item" data-id="turma-cadastrar">Cadastrar</div>
             <div class="sub-item" data-id="turma-remover">Remover</div>
             <div class="sub-item" data-id="turma-atualizar">Atualizar</div>
           </details>
 
           <details class="folder">
-            <summary>Gerenciar Perfis</summary>
+            <summary>Gerenciar Perfis <span class="arrow">›</span></summary>
             <div class="sub-item" data-id="perfil-editor">Adicionar outro perfil como editor</div>
             <div class="sub-item" data-id="perfil-visu">Adicionar visualizador de planilhas</div>
           </details>

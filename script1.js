@@ -24,7 +24,7 @@ if (button) {
   });
 }
 
-
+/*
 // ------------------- CARROSSEL DESENVOLVEDORES ------------------- //
 
 const track = document.querySelector('.carousel-track');
@@ -114,19 +114,4 @@ nav.addEventListener('click', e => {
 });
 
 
-// ------------------- LOGO GIRANDO AO REDOR DA FOTO ------------------- //
-
-document.querySelectorAll('.developer-photo').forEach(photoDiv => {
-  // Criar um container para a logo rotacionar ao redor da foto
-  const orbit = document.createElement('div');
-  orbit.classList.add('logo-orbit');
-
-  // Criar a imagem da logo
-  const logoOrbitImg = document.createElement('img');
-  logoOrbitImg.src = 'logo.png';  // Altere o caminho da imagem conforme necessário
-  logoOrbitImg.alt = 'Logo orbitando';
-  logoOrbitImg.classList.add('logo-orbit-img');
-
-  orbit.appendChild(logoOrbitImg);
-  photoDiv.appendChild(orbit);
-});
+*/
