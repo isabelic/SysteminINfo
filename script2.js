@@ -193,6 +193,27 @@ const conteudos = {
   Após preencher todas as seções, o representante deve clicar em <strong>Enviar</strong> para finalizar o registro.
 </p>
 <img src="imgs/representantes20.png" alt="Enviar formulário">
+
+<p>
+Durante todo o formulário, o representante vai ter três opções na parte inferior do formulário, que são elas:
+</p>
+
+<p>
+1- Voltar: Serve para caso o representante queira voltar para a seção anterior:
+</p>
+<img src="imgs/representantes21.png" alt="Opçoes formulário">
+
+<p>
+2- Avançar: Serve para o representante avançar para a próxima seção após preencher todas as informações necessárias daquela seção.
+</p>
+<img src="imgs/representantes22.png" alt="Opçoes formulário">
+
+<p>
+3- Limpar formulário: Serve para que o representante possa limpar todas as informações que ele já preencheu no formulário.
+</p>
+<img src="imgs/representantes23.png" alt="Opçoes formulário">
+
+
 `
 
 
