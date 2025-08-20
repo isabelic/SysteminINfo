@@ -69,15 +69,15 @@ body {
 
 /* Hero Section */
 #hero {
+  position: relative; /* necessário pro absolute do scroll-down funcionar */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* mantém o texto centralizado na vertical */
   align-items: center;
   text-align: center;
-  padding: 0 20px;
-  z-index: 1;
 }
+
 
 #hero h1 {
   font-size: 4rem;
@@ -108,7 +108,10 @@ body {
 
 /* ===== Ícone de scroll animado abaixo do título ===== */
 .scroll-down {
-  margin-top: 30px;
+  position: absolute;
+  bottom: 40px;   /* fica a 40px do final da seção */
+  left: 50%;
+  transform: translateX(-50%);
   width: 30px;
   height: 40px;
   border: 2px solid #00BFFF;
@@ -116,9 +119,8 @@ body {
   opacity: 0.75;
   animation: bounce 2s infinite;
   cursor: pointer;
-  position: relative;
-  /* fixo logo abaixo, não mais absolute */
 }
+
 
 .scroll-down::before {
   content: '';
