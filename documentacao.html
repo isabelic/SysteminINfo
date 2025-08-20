@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Documentação | SystemIN</title>
@@ -7,27 +8,29 @@
 
   <!-- Fonte Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 <body>
 
   <div class="page-wrapper">
     <!-- Botão hambúrguer -->
     <button id="menu-toggle" class="hamburger">&#9776;</button>
 
-    <!-- Menu lateral -->
+
     <aside id="sidebar">
-      <!-- Logo e título -->
+
+
       <div class="logo">
-        <img src="logo.png" alt="Logo AulaSys">
-        <h1>SystemIN Docs</h1>
+
+        <h1>SystemIN Info</h1>
       </div>
 
       <!-- Navegação -->
       <nav>
-        <a href="/docs/github">Github</a>
-
         <details class="folder">
-          <summary>ADMINISTRADOR <span class="arrow">›</span></summary>
+          <summary>Administrador <span class="arrow">›</span></summary>
 
           <details class="folder">
             <summary>Config <span class="arrow">›</span></summary>
@@ -49,20 +52,64 @@
           </details>
         </details>
       </nav>
+
+
+      <nav>
+        <details class="folder">
+          <summary>Usuário <span class="arrow">›</span></summary>
+
+          <details class="folder">
+            <summary>Utilização <span class="arrow">›</span></summary>
+            <div class="sub-item" data-id="usuario-perfil">Como usar</div>
+          </details>
+
+        </details>
+      </nav>
+      <nav>
+        <details class="folder">
+          <summary>Coordenação <span class="arrow">›</span></summary>
+          <div class="sub-item" data-id="coordenacao-visualizacao">Visualização de dados</div>
+        </details>
+      </nav>
+      <nav>
+        <details class="folder">
+          <summary>Representantes <span class="arrow">›</span></summary>
+          <div class="sub-item" data-id="representantes-form">Abrir e Preencher o Formulário</div>
+        </details>
+      </nav>
     </aside>
 
+
     <!-- BOTÃO DE VOLTAR -->
+
     <div style="margin: 1rem;">
-      <a href="index.html" class="botao-voltar">←</a>
+      <a href="index.html" class="botao-voltar">
+        <i class="fas fa-arrow-left"></i>
+      </a>
     </div>
 
     <!-- Conteúdo principal -->
-    <main id="conteudo">
-      <h1>Bem-vindo</h1>
-      <p>Selecione um item no menu para ver o conteúdo correspondente.</p>
-    </main>
-  </div>
+    <main id="conteudo" class="documento">
+      <h1>Apresentação do Sistema</h1>
+      <p>
+        Este projeto foi desenvolvido para oferecer uma solução prática e eficiente aos estudantes representantes das
+        turmas do CentroWEG, permitindo o registro simples e organizado dos acontecimentos de cada aula — como o
+        conteúdo ministrado, a realização efetiva da aula e eventuais ausências do professor.
+      </p>
 
+      <h2>Público-Alvo</h2>
+      <p>
+        Administradores, coordenadores e representantes de turma do CTW.
+      </p>
+      <h2>Objetivo do Manual</h2>
+      <p>
+        Este documento apresenta o Manual do Usuário, com orientações detalhadas para administradores, coordenadores e
+        usuários comuns sobre a correta utilização do sistema.
+      </p>
+    </main>
+    </main>
+
+  </div>
   <!-- RODAPÉ -->
   <footer class="site-footer">
     <div class="footer-content">
@@ -70,7 +117,7 @@
       <p>Desenvolvido por <strong>SystemIN Dev Team</strong></p>
     </div>
   </footer>
-
   <script src="script2.js"></script>
 </body>
+
 </html>
