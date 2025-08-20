@@ -232,3 +232,32 @@ menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
+// Ativar zoom nas imagens ao carregar novo conteúdo
+function ativarZoom() {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll("#conteudo img").forEach(img => {
+    img.classList.add("zoomable"); // adiciona classe
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = () => modal.style.display = "none";
+  modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
+}
+
+// Sempre que trocar o conteúdo, reativa o zoom
+document.querySelectorAll('.sub-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const id = item.getAttribute('data-id');
+    conteudo.innerHTML = conteudos[id] || `<h1>Conteúdo não encontrado</h1><p>Este tópico ainda não foi preenchido.</p>`;
+    ativarZoom(); // reativa após injetar HTML
+  });
+});
+
+

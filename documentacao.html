@@ -1,123 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Documentação | SystemIN</title>
-  <link rel="stylesheet" href="style2.css">
-
-  <!-- Fonte Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-</head>
-
-<body>
-
-  <div class="page-wrapper">
-    <!-- Botão hambúrguer -->
-    <button id="menu-toggle" class="hamburger">&#9776;</button>
-
-
-    <aside id="sidebar">
-
-
-      <div class="logo">
-
-        <h1>SystemIN Info</h1>
+  <ead>
+    <meta charset="UTF-8">
+    <title>Documentação | SystemIN</title>
+    <link rel="stylesheet" href="style2.css">
+  
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </head>
+  
+  <body>
+    <div class="page-wrapper">
+      <!-- Botão hambúrguer -->
+      <button id="menu-toggle" class="hamburger">&#9776;</button>
+  
+      <!-- MENU LATERAL -->
+      <aside id="sidebar">
+        <div class="logo">
+          <h1>SystemIN Info</h1>
+        </div>
+  
+        <!-- Navegação -->
+        <nav>
+          <details class="folder">
+            <summary>Administrador <span class="arrow">›</span></summary>
+  
+            <details class="folder">
+              <summary>Config <span class="arrow">›</span></summary>
+              <div class="sub-item" data-id="navbar">NavBar</div>
+              <div class="sub-item" data-id="forms">Funcionalidades do Forms</div>
+            </details>
+  
+            <details class="folder">
+              <summary>Turma <span class="arrow">›</span></summary>
+              <div class="sub-item" data-id="turma-cadastrar">Cadastrar</div>
+              <div class="sub-item" data-id="turma-remover">Remover</div>
+              <div class="sub-item" data-id="turma-atualizar">Atualizar</div>
+            </details>
+  
+            <details class="folder">
+              <summary>Gerenciar Perfis <span class="arrow">›</span></summary>
+              <div class="sub-item" data-id="perfil-editor">Adicionar outro perfil como editor</div>
+              <div class="sub-item" data-id="perfil-visu">Adicionar visualizador de planilhas</div>
+            </details>
+          </details>
+        </nav>
+  
+        <nav>
+          <details class="folder">
+            <summary>Usuário <span class="arrow">›</span></summary>
+            <details class="folder">
+              <summary>Utilização <span class="arrow">›</span></summary>
+              <div class="sub-item" data-id="usuario-perfil">Como usar</div>
+            </details>
+          </details>
+        </nav>
+  
+        <nav>
+          <details class="folder">
+            <summary>Coordenação <span class="arrow">›</span></summary>
+            <div class="sub-item" data-id="coordenacao-visualizacao">Visualização de dados</div>
+          </details>
+        </nav>
+  
+        <nav>
+          <details class="folder">
+            <summary>Representantes <span class="arrow">›</span></summary>
+            <div class="sub-item" data-id="representantes-form">Abrir e Preencher o Formulário</div>
+          </details>
+        </nav>
+      </aside>
+  
+      <!-- BOTÃO DE VOLTAR -->
+      <div style="margin: 1rem;">
+        <a href="index.html" class="botao-voltar">
+          <i class="fas fa-arrow-left"></i>
+        </a>
       </div>
-
-      <!-- Navegação -->
-      <nav>
-        <details class="folder">
-          <summary>Administrador <span class="arrow">›</span></summary>
-
-          <details class="folder">
-            <summary>Config <span class="arrow">›</span></summary>
-            <div class="sub-item" data-id="navbar">NavBar</div>
-            <div class="sub-item" data-id="forms">Funcionalidades do Forms</div>
-          </details>
-
-          <details class="folder">
-            <summary>Turma <span class="arrow">›</span></summary>
-            <div class="sub-item" data-id="turma-cadastrar">Cadastrar</div>
-            <div class="sub-item" data-id="turma-remover">Remover</div>
-            <div class="sub-item" data-id="turma-atualizar">Atualizar</div>
-          </details>
-
-          <details class="folder">
-            <summary>Gerenciar Perfis <span class="arrow">›</span></summary>
-            <div class="sub-item" data-id="perfil-editor">Adicionar outro perfil como editor</div>
-            <div class="sub-item" data-id="perfil-visu">Adicionar visualizador de planilhas</div>
-          </details>
-        </details>
-      </nav>
-
-
-      <nav>
-        <details class="folder">
-          <summary>Usuário <span class="arrow">›</span></summary>
-
-          <details class="folder">
-            <summary>Utilização <span class="arrow">›</span></summary>
-            <div class="sub-item" data-id="usuario-perfil">Como usar</div>
-          </details>
-
-        </details>
-      </nav>
-      <nav>
-        <details class="folder">
-          <summary>Coordenação <span class="arrow">›</span></summary>
-          <div class="sub-item" data-id="coordenacao-visualizacao">Visualização de dados</div>
-        </details>
-      </nav>
-      <nav>
-        <details class="folder">
-          <summary>Representantes <span class="arrow">›</span></summary>
-          <div class="sub-item" data-id="representantes-form">Abrir e Preencher o Formulário</div>
-        </details>
-      </nav>
-    </aside>
-
-
-    <!-- BOTÃO DE VOLTAR -->
-
-    <div style="margin: 1rem;">
-      <a href="index.html" class="botao-voltar">
-        <i class="fas fa-arrow-left"></i>
-      </a>
+  
+      <!-- Conteúdo principal -->
+      <main id="conteudo" class="documento">
+        <h1>Apresentação do Sistema</h1>
+        <p>
+          Este projeto foi desenvolvido para oferecer uma solução prática e eficiente aos estudantes representantes das
+          turmas do CentroWEG, permitindo o registro simples e organizado dos acontecimentos de cada aula — como o
+          conteúdo ministrado, a realização efetiva da aula e eventuais ausências do professor.
+        </p>
+  
+        <h2>Público-Alvo</h2>
+        <p>Administradores, coordenadores e representantes de turma do CTW.</p>
+  
+        <h2>Objetivo do Manual</h2>
+        <p>
+          Este documento apresenta o Manual do Usuário, com orientações detalhadas para administradores, coordenadores e
+          usuários comuns sobre a correta utilização do sistema.
+        </p>
+  
+        <h2>Exemplo de Imagens</h2>
+        <p>Clique em qualquer imagem para visualizar em tela cheia:</p>
+        <div class="galeria">
+          <img src="https://via.placeholder.com/300x200" alt="Exemplo 1" class="zoomable">
+          <img src="https://via.placeholder.com/300x200" alt="Exemplo 2" class="zoomable">
+          <img src="https://via.placeholder.com/300x200" alt="Exemplo 3" class="zoomable">
+        </div>
+      </main>
     </div>
-
-    <!-- Conteúdo principal -->
-    <main id="conteudo" class="documento">
-      <h1>Apresentação do Sistema</h1>
-      <p>
-        Este projeto foi desenvolvido para oferecer uma solução prática e eficiente aos estudantes representantes das
-        turmas do CentroWEG, permitindo o registro simples e organizado dos acontecimentos de cada aula — como o
-        conteúdo ministrado, a realização efetiva da aula e eventuais ausências do professor.
-      </p>
-
-      <h2>Público-Alvo</h2>
-      <p>
-        Administradores, coordenadores e representantes de turma do CTW.
-      </p>
-      <h2>Objetivo do Manual</h2>
-      <p>
-        Este documento apresenta o Manual do Usuário, com orientações detalhadas para administradores, coordenadores e
-        usuários comuns sobre a correta utilização do sistema.
-      </p>
-    </main>
-    </main>
-
-  </div>
-  <!-- RODAPÉ -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2025 SystemIN - Todos os direitos reservados.</p>
-      <p>Desenvolvido por <strong>SystemIN Dev Team</strong></p>
+  
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 SystemIN - Todos os direitos reservados.</p>
+        <p>Desenvolvido por <strong>SystemIN Dev Team</strong></p>
+      </div>
+    </footer>
+  
+    <!-- Modal para imagens em tela cheia -->
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="caption"></div>
     </div>
-  </footer>
-  <script src="script2.js"></script>
-</body>
-
-</html>
+  
+    <script src="script2.js"></script>
+  </body>
+  
+  </html>
