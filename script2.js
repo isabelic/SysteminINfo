@@ -1,21 +1,74 @@
+
 const conteudo = document.getElementById('conteudo');
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 
 const conteudos = {
-  navbar: `
-    <h1>Componente NavBar</h1>
-    <p>A <strong>NavBar</strong> é a barra de navegação superior do sistema AulaSys. Ela serve para:</p>
-    <ul>
-      <li>Navegar entre as principais páginas (ex: Dashboard, Alunos, Turmas, Relatórios)</li>
-      <li>Exibir atalhos úteis e botões de ação rápida</li>
-      <li>Indicar qual o perfil logado no sistema (Administrador, Editor, etc.)</li>
-    </ul>
-    <p>Ela é exibida em todas as telas protegidas por autenticação e se adapta para dispositivos móveis.</p>
-    <div class="img-container">
-      <img src="unnamed.png" alt="Exemplo de NavBar">
-    </div>
-  `,
+
+  "navbar": `
+<h1>Componente NavBar</h1>
+<p>A <strong>NavBar</strong> é a barra de navegação superior do sistema AulaSys. Ela serve para:</p>
+<ul>
+  <li>Navegar entre as principais páginas (ex: Dashboard, Alunos, Turmas, Relatórios)</li>
+  <li>Exibir atalhos úteis e botões de ação rápida</li>
+  <li>Indicar qual o perfil logado no sistema (Administrador, Editor, etc.)</li>
+</ul>
+<p>Ela é exibida em todas as telas protegidas por autenticação e se adapta para dispositivos móveis.</p>
+<img src="imgs/navBar1.png" alt="Exemplo de NavBar">
+
+<h2>Detalhes da NavBar no Formulário</h2>
+<p>Abaixo, uma explicação sobre cada item da navbar do formulário:</p>
+
+<p>Ao clicar no link, o usuário volta para a página inicial do Google Formulário.</p>
+<img src="imgs/navBar1.png" alt="Página inicial do Google Formulário">
+
+<p>A área destacada corresponde ao <strong>título do formulário</strong>. Clique duas vezes para editar.</p>
+<img src="imgs/navBar2.png" alt="Título do formulário">
+
+<p>Card referente à <strong>localização do formulário</strong>. É possível selecionar a pasta do Google Drive onde deseja armazená-lo.</p>
+<img src="imgs/navBar3.png" alt="Localização do formulário">
+
+<p>Card exibido ao clicar no link anterior, mostrando opções e informações relacionadas.</p>
+<img src="imgs/navBar4.png" alt="Card de opções do formulário">
+
+<p>Exibe a <strong>pasta onde o formulário está alocado</strong>. Se não houver nome, significa que está apenas salvo no Google Drive.</p>
+<img src="imgs/navBar5.png" alt="Pasta atual do formulário">
+
+<p>Seção <strong>Sugestões</strong> apresenta indicações de pastas do Google Drive.</p>
+<img src="imgs/navBar6.png" alt="Sugestões de pastas">
+
+<p>A seção <strong>Com estrela</strong> exibe pastas favoritas do Google Drive.</p>
+<img src="imgs/navBar7.png" alt="Pastas com estrela">
+
+<p>Seção <strong>Todos os locais</strong> apresenta lista completa para alocação.</p>
+<img src="imgs/navBar8.png" alt="Todos os locais disponíveis">
+
+<p>Clicando em <strong>Meu Drive</strong>, exibe todas as pastas do usuário.</p>
+<img src="imgs/navBar9.png" alt="Meu Drive">
+
+<p>Em <strong>Drives compartilhados</strong>, aparecem pastas compartilhadas com outros usuários.</p>
+<img src="imgs/navBar10.png" alt="Drives compartilhados">
+
+<p>Em <strong>Computadores</strong>, são exibidos dispositivos sincronizados com a conta.</p>
+<img src="imgs/navBar11.png" alt="Computadores sincronizados">
+
+<p>Em <strong>Compartilhados comigo</strong>, aparecem pastas compartilhadas por outros usuários.</p>
+<img src="imgs/navBar12.png" alt="Compartilhados comigo">
+
+<p>Após selecionar a pasta desejada, clique no botão azul para confirmar a alocação do formulário.</p>
+<img src="imgs/navBar13.png" alt="Confirmação da alocação">
+
+<p>O ícone de <strong>estrela</strong> adiciona o formulário aos favoritos.</p>
+<img src="imgs/navBar14.png" alt="Adicionar formulário aos favoritos">
+
+<p>O ícone de <strong>paleta de cores</strong> permite personalizar o tema do formulário.</p>
+<img src="imgs/navBar15.png" alt="Personalização do tema">
+
+<p>Exibe as opções de cores, fundos e elementos visuais para personalização.</p>
+<img src="imgs/navBar16.png" alt="Opções de personalização do formulário">
+`,
+
+
 
   forms: `
     <h1>Funcionalidades do Forms</h1>
@@ -27,9 +80,100 @@ const conteudos = {
     </ul>
   `,
 
-  "turma-cadastrar": `<h1>Cadastrar Turma</h1><p>Permite registrar novas turmas associadas a professores e horários.</p>`,
-  "turma-remover": `<h1>Remover Turma</h1><p>Remove permanentemente uma turma do banco de dados.</p>`,
-  "turma-atualizar": `<h1>Atualizar Turma</h1><p>Edita dados existentes de uma turma.</p>`,
+  "turma-cadastrar": `
+<h3>2.1.1 Adicionar novas turmas</h3>
+
+<p>Na <strong>Seção 2</strong>, na parte intitulada <strong>“Dados do Representante”</strong>, localize o card <strong>“Selecione a sua turma”</strong> e clique <strong>duas vezes</strong> sobre ele com o mouse para abrir a lista de opções disponíveis.</p>
+<img src="imgs/turma1.png" alt="Selecione a sua turma">
+
+<p>Desça até o final do card e clique em <strong>“Adicionar opção”</strong>, inserindo o <strong>nome da turma</strong> que deseja adicionar.</p>
+<img src="imgs/turma2.png" alt="Adicionar opção">
+
+<p>Após incluir a nova turma, prossiga para <strong>criar uma nova seção</strong> no formulário.</p>
+<img src="imgs/turma3.png" alt="Criar nova seção">
+
+<p>Clicando no botão destacado, será criada uma <strong>nova seção</strong>, que deve ser nomeada como <strong>“Professores e Unidades Curriculares – (Nome da turma recém-criada)”</strong>.</p>
+<img src="imgs/turma4.png" alt="Nova seção criada">
+
+<p>Adicione a <strong>descrição padrão</strong> de todas as seções.</p>
+<img src="imgs/turma5.png" alt="Descrição padrão das seções">
+
+<p>Volte ao card <strong>“Selecione a sua turma”</strong>, clique duas vezes sobre ele e, em seguida, clique em <strong>“Continuar para a próxima seção”</strong> para prosseguir com a configuração do formulário.</p>
+<img src="imgs/turma6.png" alt="Continuar para próxima seção">
+
+<p>Selecione a seção recém-criada para a turma nova; no exemplo, será <strong>“Ir para a seção 3 (Professores e Unidades Curriculares – MI77)”</strong>. Essa configuração fará com que o representante seja direcionado automaticamente para a seção correspondente à sua turma ao selecioná-la no formulário.</p>
+<img src="imgs/turma7.png" alt="Selecionar seção correspondente">
+
+<p>Em seguida, edite a seção <strong>“Professores e Unidades Curriculares”</strong> da turma recém-criada, assegurando que todas as informações estejam <strong>corretas e completas</strong>.</p>
+<img src="imgs/turma8.png" alt="Editar seção Professores e Unidades Curriculares">
+
+<p>Clicando no <strong>símbolo de adicionar pergunta</strong>, crie um novo card que permitirá ao representante <strong>selecionar o professor</strong> que ministrou a aula para a turma.</p>
+<img src="imgs/turma9.png" alt="Adicionar pergunta">
+
+<p>Na área destacada, insira a pergunta <strong>“Selecione o nome do professor:”</strong>, que será utilizada pelo representante para indicar o docente responsável pela aula.</p>
+<img src="imgs/turma10.png" alt="Pergunta selecionar professor">
+
+<p>Em seguida, na área destacada, insira os <strong>nomes dos professores</strong>, listando-os <strong>um abaixo do outro</strong>, para que o representante possa selecionar corretamente.</p>
+<img src="imgs/turma11.png" alt="Inserir nomes dos professores">
+
+<p>Após concluir esta etapa, <strong>duplique o card “Selecione o nome do professor”</strong> para criar o card <strong>“Selecione a unidade curricular”</strong>, mantendo o mesmo formato de seleção.</p>
+<img src="imgs/turma12.png" alt="Duplicar card">
+
+<p>Clique no botão de duplicar pergunta.</p>
+<img src="imgs/turma13.png" alt="Botão duplicar pergunta">
+
+<p>Troque o título do card para <strong>“Selecione a unidade curricular”</strong>.</p>
+<img src="imgs/turma14.png" alt="Alterar título do card">
+
+<p>Deixando o card nesse formato, procedemos à <strong>edição dos tópicos</strong>, substituindo-os pelos <strong>nomes das unidades curriculares</strong> que a turma possui ao longo do curso.</p>
+<img src="imgs/turma15.png" alt="Editar tópicos do card">
+
+<p>Em seguida, criaremos a <strong>seção de Frequência dos Alunos</strong>. Para isso, adicione uma <strong>nova seção</strong> ao formulário e nomeie-a como <strong>“Frequência dos Alunos – (nome da turma recém-criada)”</strong>.</p>
+<img src="imgs/turma16.png" alt="Nova seção Frequência dos Alunos">
+
+<p>Criamos a seção, agora vamos nomear e fazer as devidas alterações.</p>
+<img src="imgs/turma17.png" alt="Nomear seção">
+
+<p>Insira o <strong>título da seção</strong>, que seguirá o formato <strong>“Frequência dos Alunos – [nome da turma]”</strong>. No exemplo utilizado, será <strong>“Frequência dos Alunos – MI77”</strong>.</p>
+<img src="imgs/turma18.png" alt="Título da seção">
+
+<p>No <strong>campo de descrição</strong>, adicione uma breve instrução para orientar o representante sobre o preenchimento da seção. Ex.: <strong>“Selecione os alunos presentes na aula e os faltantes:”</strong>.</p>
+<img src="imgs/turma19.png" alt="Descrição da seção">
+
+<p>Adicione uma nova pergunta, defina o título e selecione o tópico <strong>grade de múltipla escolha</strong> para registrar presença e ausência dos alunos.</p>
+<img src="imgs/turma20.png" alt="Adicionar pergunta de frequência">
+
+<p>Configure duas colunas: <strong>Presente</strong> e <strong>Faltante</strong>, e adicione os nomes dos alunos da turma em cada linha.</p>
+<img src="imgs/turma21.png" alt="Configurar colunas e adicionar alunos">
+
+<p>Ao final da seção, clique no <strong>botão “Continuar para a próxima seção”</strong> para prosseguir com a configuração do formulário. Selecione a próxima seção correspondente à etapa de cadastro da aula.</p>
+<img src="imgs/turma22.png" alt="Continuar para próxima seção">
+`,
+
+
+  "turma-remover": `
+  <h1>Remover Turma</h1>
+  <p>Remover uma turma no sistema é um processo <strong>simples, rápido e direto</strong>, que pode ser necessário, por exemplo, quando a turma já se formou ou por outros motivos. A seguir, apresenta-se o <strong>passo a passo</strong> para realizar essa ação:</p>
+
+  <p>Primeiramente, acesse a <strong>Seção 1 (topo do formulário)</strong> e remova a turma da <strong>lista de turmas disponíveis</strong> para seleção pelos representantes.</p>
+  <img src="imagens/remover1.png" alt="Remover turma da lista">
+
+  <p>Em seguida, clique sobre o card <strong>“Selecione a sua turma”</strong> e, na opção correspondente, clique no <strong>“X”</strong> localizado ao lado para excluir a turma do formulário.</p>
+  <img src="imagens/remover2.png" alt="Excluir turma do card">
+
+  <p>Para remover completamente a turma do sistema, é necessário também <strong>excluir suas demais seções</strong>. Para isso, acesse a seção <strong>“Professores e Unidades Curriculares”</strong> correspondente à turma e clique nos <strong>três pontinhos destacados</strong> para acessar as opções de exclusão.</p>
+  <img src="imagens/remover3.png" alt="Menu de opções de exclusão">
+
+  <p>Clique em <strong>excluir seção</strong>.</p>
+  <img src="imagens/remover4.png" alt="Botão excluir seção">
+
+  <p>Em seguida, será exibida uma <strong>janela de confirmação</strong>, informando que, ao excluir a seção, <strong>todos os cards contidos nela serão removidos</strong>. Como o objetivo é excluir a turma, basta clicar em <strong>OK</strong> para confirmar a ação.</p>
+  <img src="imagens/remover5.png" alt="Confirmação de exclusão">
+
+  <p>Por fim, acesse a seção <strong>“Frequência dos Alunos”</strong> da turma que deseja excluir e repita o mesmo procedimento, garantindo que a turma seja <strong>removida completamente do formulário</strong>.</p>
+`
+,
+
 
   "perfil-editor": `<h1>Adicionar outro perfil como editor</h1><p>Permite promover um usuário existente para o perfil de editor, com permissões de edição.</p>`,
   "perfil-visu": `<h1>Adicionar visualizador de planilhas</h1><p>Concede acesso somente leitura a determinados relatórios e planilhas.</p>`
@@ -221,10 +365,25 @@ Durante todo o formulário, o representante vai ter três opções na parte infe
 
 
 
+
+// ====== Função para mudar conteúdo com fade ======
+function trocarConteudo(id) {
+  conteudo.classList.add("fade-out");
+
+  setTimeout(() => {
+    conteudo.innerHTML = conteudos[id] || 
+    conteudo.classList.remove("fade-out");
+    conteudo.classList.add("fade-in");
+
+    ativarZoom(); // reativa o zoom nas imagens
+  }, 300); // mesmo tempo da transição no CSS
+}
+
+// Eventos nos menus
 document.querySelectorAll('.sub-item').forEach(item => {
   item.addEventListener('click', () => {
     const id = item.getAttribute('data-id');
-    conteudo.innerHTML = conteudos[id] || `<h1>Conteúdo não encontrado</h1><p>Este tópico ainda não foi preenchido.</p>`;
+    trocarConteudo(id);
   });
 });
 
@@ -232,14 +391,14 @@ menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
-// Ativar zoom nas imagens ao carregar novo conteúdo
+// ====== Modal Zoom nas imagens ======
 function ativarZoom() {
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
   const closeBtn = document.querySelector(".close");
 
   document.querySelectorAll("#conteudo img").forEach(img => {
-    img.classList.add("zoomable"); // adiciona classe
+    img.classList.add("zoomable");
     img.style.cursor = "pointer";
     img.addEventListener("click", () => {
       modal.style.display = "block";
@@ -250,14 +409,4 @@ function ativarZoom() {
   closeBtn.onclick = () => modal.style.display = "none";
   modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
 }
-
-// Sempre que trocar o conteúdo, reativa o zoom
-document.querySelectorAll('.sub-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const id = item.getAttribute('data-id');
-    conteudo.innerHTML = conteudos[id] || `<h1>Conteúdo não encontrado</h1><p>Este tópico ainda não foi preenchido.</p>`;
-    ativarZoom(); // reativa após injetar HTML
-  });
-});
-
 
